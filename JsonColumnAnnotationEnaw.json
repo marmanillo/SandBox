@@ -93,7 +93,12 @@ var options = {
     tickAmount: 7,
     title: {
       text: "Tonnen CO2"
-    }
+    },
+    labels: {
+      formatter: function (value) {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+      }
+    },
   },
 
   annotations: {
