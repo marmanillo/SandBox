@@ -1,0 +1,161 @@
+import ApexCharts from "apexcharts";
+var options = {
+  chart: {
+    height: 350,
+    type: "line",
+  },
+  series: [
+    {
+      name: "column1",
+      data: [100, 102, 104, 105.2, 106.1, 107, 109, 111, 112.8]
+    },
+    {
+      name: "column2",
+      data: [100, 100.50, 101, 101.50, 102, 102.50, 103, 104.50, 105.30, 106.20, 106.8]
+    },
+  ],
+  xaxis: {
+    //tickAmount: 10,
+    //tickPlacement: 'on',
+    categories: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022],
+  },
+  dataLabels:{
+    enabled: false
+  },
+  tooltip: {
+    enabled: true,
+    //intersect: false,
+    //shared: true
+  },
+  grid:{
+    show: true,
+    position: 'back',
+    yaxis:{
+      lines:{
+        show: true
+      }
+    },
+    xaxis:{
+      lines:{
+        show: false
+      }
+    },
+    row: {
+      opacity: 1
+  },  
+  },
+  colors: ["#FFDA1A","#0E4194"],
+  legend: {
+    show: true
+  },
+  yaxis: {
+    decimalsInFloat: 1,
+    min: 100,
+    max: 120,
+    tickAmount: 4,
+    title: {
+      text: "Energieeffizienz(%)"
+    },
+    labels: {
+      formatter: function (value) {
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+      }
+    },
+  },
+
+  annotations: {
+    yaxis: [
+      {
+        position: "back",
+        y: 115,
+        width: "0%",
+        label:{
+          offsetY: -30,
+          borderColor: "#ffda1a",
+          text: "3 960 428 MWh",
+          position: "right",
+          style:{
+            color: "#fff",
+            background: "#ffda1a",
+            fontSize: "20px",
+            fontWeight: "700"
+          }
+        }
+      }],
+      points:[
+        {
+          position: "back",
+          x: 9,
+          y: 112.8,
+          serieIndex: 0,
+          marker:{
+            size: 8,
+            fillColor: "#ffda1a",
+            strockeColor: "#ffda1a",
+            strokeWidth: 2,
+            radius: 2
+          },
+          label:{
+            borderWidth: 0,
+            text: "112.8%",
+            style:{
+              background: "Transparent",
+              fontSize: "16px",
+              fontWeight: "800",
+              color: "#ffda1a"
+            }
+          }
+        },
+        {
+          position: "back",
+          x: 9,
+          y: 105.3,
+          serieIndex: 0,
+          marker:{
+            size: 8,
+            fillColor: "#0E4194",
+            strockeColor: "#0E4194",
+            strokeWidth: 2,
+            radius: 2
+          },
+          label:{
+            borderWidth: 0,
+            text: "105.3%",
+            style:{
+              background: "Transparent",
+              fontSize: "16px",
+              fontWeight: "800",
+              color: "#0E4194"
+            }
+          }
+        },
+        {
+          position: "back",
+          x: 11,
+          y: 106.8,
+          serieIndex: 0,
+          marker:{
+            size: 8,
+            fillColor: "#0E4194",
+            strockeColor: "#0E4194",
+            strokeWidth: 2,
+            radius: 2
+          },
+          label:{
+            offsetX: -30,
+            borderWidth: 0,
+            text: "106.8%",
+            style:{
+              background: "Transparent",
+              fontSize: "16px",
+              fontWeight: "800",
+              color: "#0E4194"
+            }
+          }
+        },
+      ]
+  }
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
