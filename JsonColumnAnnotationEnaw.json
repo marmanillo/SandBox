@@ -56,11 +56,17 @@ var options = {
   xaxis: {
     //tickAmount: 10,
     //tickPlacement: 'on',
-    categories: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+    categories: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020],
+    axisTicks:{
+      show: false
+
+    }
   },
   plotOptions: {
     bar: {
-      columnWidth: "100%"
+      columnWidth: "100%",
+      barHeight: "100%",
+      borderRadius: 0,
     }
   },
   dataLabels:{
@@ -71,17 +77,33 @@ var options = {
     //intersect: false,
     //shared: true
   },
-  
+  grid:{
+    show: true,
+    position: 'back',
+    yaxis:{
+      lines:{
+        show: true
+      }
+    },
+    xaxis:{
+      lines:{
+        show: false
+      }
+    },
+    row: {
+      opacity: 1
+  },  
+  },
   colors: [
     "#0E4194","#0E4194","#0E4194","#0E4194","#0E4194","#0E4194","#0E4194","#FFDD00","#FFDD00"],
   fill: {
-    type: ["solid","solid","solid","solid","solid","solid","solid","pattern","solid"],
-    pattern:{
-      //style: [,, , , , , , "slantedLines",],
-      style: [,, , , , , , ,,],
-      width: 6,
-      strockeWidth: 2
-    }
+    //type: ["solid","solid","solid","solid","solid","solid","solid","pattern","solid"],
+    // pattern:{
+    //   //style: [,, , , , , , "slantedLines",],
+    //   style: [,, , , , , , ,,],
+    //   width: 6,
+    //   strockeWidth: 2
+    // }
   },
   
   legend: {
@@ -96,7 +118,7 @@ var options = {
     },
     labels: {
       formatter: function (value) {
-        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "'");
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
       }
     },
   },
@@ -167,10 +189,7 @@ var options = {
             color: "#8D8E8D",
             background: "none"
           }
-            
-
         }
-            
       }
     ],
     xaxis: [{
