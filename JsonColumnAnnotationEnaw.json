@@ -1,0 +1,181 @@
+import ApexCharts from "apexcharts";
+var options = {
+  chart: {
+    height: 350,
+    type: "bar",
+    stacked: true
+  },
+  series: [
+    {
+      name: "column1",
+      type: "column",
+      data: [50000, 50000, 50000, 50000, 50000, 50000, 50000, 50000]
+    },
+    {
+      name: "column2",
+      type: "column",
+      data: [0, 70000, 70000, 70000, 70000, 70000, 70000, 70000]
+    },
+    {
+      name: "column3",
+      type: "column",
+      data: [0, 0, 160000, 160000, 160000, 160000, 160000, 160000]
+    },
+    {
+      name: "column4",
+      type: "column",
+      data: [0, 0, 0, 125000, 125000, 125000, 125000, 125000]
+    },
+    {
+      name: "column5",
+      type: "column",
+      data: [0, 0, 0, 0, 90000, 90000, 90000, 90000]
+    },
+    {
+      name: "column6",
+      type: "column",
+      data: [0, 0, 0, 0, 0, 55000, 55000, 55000]
+    },
+    {
+      name: "column7",
+      type: "column",
+      data: [0, 0, 0, 0, 0, 0, 60000, 60000]
+    },
+    // {
+    //   name: "column8",
+    //   type: "column",
+    //   data: [ 0, 0, 0, 0, 0, 0, 0, 18411]
+    //   //data: [ 0, 0, 0, 0, 0, 0, 0, 628411]
+    // },
+    {
+      name: "column9",
+      type: "column",
+      data: [ 0, 0, 0, 0, 0, 0, 0, 50561]
+    },
+  ],
+  xaxis: {
+    //tickAmount: 10,
+    //tickPlacement: 'on',
+    categories: [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+  },
+  plotOptions: {
+    bar: {
+      columnWidth: "100%"
+    }
+  },
+  dataLabels:{
+    enabled: false
+  },
+  tooltip: {
+    enabled: false,
+    //intersect: false,
+    //shared: true
+  },
+  
+  colors: [
+    "#0E4194","#0E4194","#0E4194","#0E4194","#0E4194","#0E4194","#0E4194","#FFDD00","#FFDD00"],
+  fill: {
+    type: ["solid","solid","solid","solid","solid","solid","solid","pattern","solid"],
+    pattern:{
+      //style: [,, , , , , , "slantedLines",],
+      style: [,, , , , , , ,,],
+      width: 6,
+      strockeWidth: 2
+    }
+  },
+  
+  legend: {
+    show: true
+  },
+  yaxis: {
+    min: 0,
+    max: 700000,
+    tickAmount: 7,
+    title: {
+      text: "Tonnen CO2"
+    }
+  },
+
+  annotations: {
+    yaxis: [
+      {
+        y: 50000,
+        y2: 120000,
+        borderColor: "transparent",
+        fillColor: "#fff",
+        opacity: 0.1,
+        //width: "88%"
+      },
+      {
+        y: 120000,
+        y2: 280000,
+        borderColor: "transparent",
+        fillColor: "#fff",
+        opacity: 0.3,
+        //width: "88%"
+      },
+      {
+        y: 280000,
+        y2: 405000,
+        borderColor: "transparent",
+        fillColor: "#fff",
+        opacity: 0.4,
+        //width: "88%"
+      },
+      {
+        y: 405000,
+        y2: 495000,
+        borderColor: "transparent",
+        fillColor: "#fff",
+        opacity: 0.5,
+        //width: "88%"
+      },
+      {
+        y: 495000,
+        y2: 550000,
+        borderColor: "transparent",
+        fillColor: "#fff",
+        opacity: 0.6,
+        //width: "88%"
+      },
+      {
+        y: 550000,
+        y2: 610000,
+        borderColor: "transparent",
+        fillColor: "#fff",
+        opacity: 0.8,
+        //width: "88%"
+      },
+    ],
+    xaxis: [{
+      x: 2019,
+      x2: 2020,
+      //strokeDashArray: 1,
+      //borderColor: '#c2c2c2',
+      fillColor: '#b39b00',
+      opacity: 0.6,
+      offsetX: 44,
+      offsetY: 33,
+      label: {
+          //borderColor: '#c2c2c2',
+          borderWidth: 0,
+          //borderRadius: 2,
+          text: "678972 t CO2",
+          //textAnchor: 'middle',
+          position: 'top',
+          orientation: 'horizontal',
+          offsetX: 0,
+          offsetY: 30,
+          style: {
+              background: 'transparent',
+              color: '#000',
+              fontSize: '14px',
+              fontWeight: 700,
+          },
+      },
+    }],
+  }
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
