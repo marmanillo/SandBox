@@ -146,6 +146,27 @@ var options = {
         opacity: 0.8,
         //width: "88%"
       },
+      {
+        y: 610000,
+        y2: 678972,
+        borderColor: "transparent",
+        fillColor: "#fff",
+        opacity: 0,
+        label:{
+          text: "50561 t CO₂",
+          position: "right",
+          borderColor: "none",
+          style:{
+            fontSize: "16px",
+            fontWeight: "700",
+            color: "#8D8E8D",
+            background: "none"
+          }
+            
+
+        }
+            
+      }
     ],
     xaxis: [{
       x: 2019,
@@ -167,10 +188,10 @@ var options = {
           offsetX: 0,
           offsetY: 30,
           style: {
-              background: 'transparent',
-              color: '#000',
-              fontSize: '14px',
-              fontWeight: 700,
+            fontSize: "16px",
+            fontWeight: "700",
+            color: "#8D8E8D",
+            background: "none"
           },
       },
     }],
