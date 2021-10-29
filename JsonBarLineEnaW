@@ -1,0 +1,222 @@
+import ApexCharts from "apexcharts";
+var options = {
+  series: [
+    {
+      name: "column1",
+      type: "column",
+      data: [800]
+    },
+    {
+      name: "column2",
+      type: "column",
+      data: [0, , , 600, , 500, , 400, 300, , , 200, , 100, , 0]
+    },
+    {
+      name: "column3",
+      type: "column",
+      data: [0, , , 0, , 0, , 0, 0, , , 0, , 0, , 100]
+    },
+    {
+      name: "column4",
+      type: "column",
+      data: [0, , , 0, , 0, , 0, 0, , , 0, , 100, , 100]
+    },
+    {
+      name: "column5",
+      type: "column",
+      data: [0, , , 0, , 0, , 0, 0, , , 100, , 100, , 100]
+    },
+    {
+      name: "column6",
+      type: "column",
+      data: [0, , , 0, , 0, , 0, 100, , , 100, , 100, , 100]
+    },
+    {
+      name: "column7",
+      type: "column",
+      data: [0, , , 0, , 0, , 100, 100, , , 100, , 100, , 100]
+    },
+    {
+      name: "column8",
+      type: "column",
+      data: [0, , , 0, , 100, , 100, 100, , , 100, , 100, , 100, 0]
+    },
+    {
+      name: "line",
+      type: "line",
+      data: [
+        800,
+        732,
+        666,
+        600,
+        550,
+        500,
+        450,
+        400,
+        300,
+        266,
+        233,
+        200,
+        150,
+        100,
+        50,
+        0
+      ]
+    }
+  ],
+  stroke: {
+    show: true,
+    colors: ["#d6d6d6"],
+    width: [2, 0, 0, 0, 0, 0, 0, 0, 4],
+    dashArray: [5]
+  },
+  chart: {
+    height: 350,
+    type: "line",
+    stacked: true
+  },
+  tooltip: {
+    show: true,
+    intersect: false,
+    shared: true
+  },
+  plotOptions: {
+    bar: {
+      columnWidth: "40%"
+    }
+  },
+  markers: {
+    size: 5,
+    discrete: [
+      {
+        seriesIndex: 8,
+        dataPointIndex: 1,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      },
+      {
+        seriesIndex: 8,
+        dataPointIndex: 2,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      },
+      {
+        seriesIndex: 8,
+        dataPointIndex: 4,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      },
+      {
+        seriesIndex: 8,
+        dataPointIndex: 6,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      },
+      {
+        seriesIndex: 8,
+        dataPointIndex: 9,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      },
+      {
+        seriesIndex: 8,
+        dataPointIndex: 10,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      },
+      {
+        seriesIndex: 8,
+        dataPointIndex: 12,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      },
+      {
+        seriesIndex: 8,
+        dataPointIndex: 14,
+        fillColor: "transparent",
+        strokeColor: "transparent"
+      }
+    ]
+  },
+  // fill: {
+  //   colors: [
+  //     "transparent",
+  //     "#d6d6d6",
+  //     "#355697",
+  //     "#D3B100",
+  //     "#A86668",
+  //     "#103367",
+  //     "#6B6B6B",
+  //     "#A86668",
+  //     "#939393"
+  //   ],
+  //   opacity: [0, 0.7, 1, 1, 1, 1, 1, 1, 1]
+  // },
+  colors: [
+    "transparent",
+    "#d6d6d6",
+    "#355697",
+    "#D3B100",
+    "#A86668",
+    "#103367",
+    "#6B6B6B",
+    "#A86668",
+    "#939393"
+  ],
+  xaxis: {
+    //tickAmount: 10,
+    categories: [
+      1990,
+      2000,
+      2010,
+      2020,
+      2023,
+      2024,
+      2025,
+      2027,
+      2029,
+      2030,
+      2035,
+      2037,
+      2040,
+      2042,
+      2045,
+      2048,
+      2050
+    ]
+  },
+  legend: {
+    show: true
+  },
+  yaxis: {
+    min: 0,
+    max: 800,
+    title: {
+      text: "Points"
+    }
+  },
+
+  annotations: {
+    yaxis: [
+      {
+        y: 400,
+        strokeDashArray: 5,
+        width: "45%",
+        borderColor: "#939393",
+        label: {
+          borderColor: "transparent",
+          text: "lorem ipsus aconten - 50% 1990",
+          offsetX: -550,
+          style: {
+            background: "transparent",
+            color: "#000",
+            fontSize: "13px"
+          }
+        }
+      }
+    ]
+  }
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
